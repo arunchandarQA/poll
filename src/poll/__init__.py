@@ -1,7 +1,7 @@
 """
 Utilities for polling, retrying, and exception handling.
 """
-import collections
+import collections.abc as collections
 import inspect
 import time
 from functools import wraps
