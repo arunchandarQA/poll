@@ -1,7 +1,7 @@
 """
 Utilities for polling, retrying, and exception handling.
 """
-import collections.abc as collections
+import collections
 import inspect
 import time
 from functools import wraps
@@ -265,7 +265,7 @@ def exec_(f, ex, until, times=3, timeout=15, interval=1, on_error=lambda e, x: N
     :raises TimeoutError: The call did not succeed
         within the specified timeout.
     """
-    if isinstance(ex, collections.Iterable):
+    if isinstance(ex, collections.abc.Iterable):
         exs = tuple(ex)
     else:
         exs = (ex,)
